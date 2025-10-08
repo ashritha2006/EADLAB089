@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CBIT Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 30px 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 800px;
+    }
+
+    h2, h3, h4 {
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    p.header {
+      text-align: center;
+      margin: 2px 0;
+      font-size: 14px;
+    }
+
+    form label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"] {
+      width: 100%;
+      padding: 7px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    th, td {
+      border: 1px solid #000;
+      padding: 8px;
+      text-align: center;
+    }
+
+    input[type="submit"] {
+      margin-top: 30px;
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      display: block;
+      width: 100%;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    .signature-section {
+      margin-top: 30px;
+    }
+
+    .signature-label {
+      display: block;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .signature-section p {
+      border-bottom: 1px solid black;
+      height: 25px;
+      margin: 5px 0 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Chaitanya Bharathi Institute of Technology (A)</h2>
+    <p class="header">Chaitanya Bharathi P.O., Kokapet (V), Gandipet (M), Hyderabad - 500 075, Telangana State</p>
+    <p class="header">Phone No: 040-24193280 | Fax: 040 – 24193278 | Website: www.cbit.ac.in</p>
+
+    <h3>Academic & Examination Cell</h3>
+    <h3>REGISTRATION FORM</h3>
+
+    <form>
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date">
+
+      <label>Academic Year:</label>
+      <input type="text" name="academic_year">
+
+      <label>1. Name of the Student:</label>
+      <input type="text" name="student_name">
+
+      <label>2. Roll No.:</label>
+      <input type="text" name="roll_no">
+
+      <label>3. Name of the Programme:</label>
+      <input type="text" name="program">
+
+      <label>Branch:</label>
+      <input type="text" name="branch">
+
+      <label>4. Semester:</label>
+      <input type="text" name="semester">
+
+      <label>5. Mobile Number:</label>
+      <input type="text" name="phone_no">
+
+      <label>6. Email:</label>
+      <input type="email" name="email">
+
+      <h4>7. Details of Annual Tuition Fee (Attach Proofs for Payment):</h4>
+
+      <label>a) Status of Tuition Fee Payment:</label>
+      <input type="text" name="fee_status">
+
+      <label>b) Date of Fee Payment:</label>
+      <input type="text" name="fee_date">
+
+      <label>c) Mode of Payment:</label>
+      <input type="text" name="payment_mode">
+
+      <label>d) Receipt No. with Date:</label>
+      <input type="text" name="receipt_no">
+
+      <h4>8. Details of Subjects Registering For:</h4>
+
+      <table>
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>Course Code</th>
+            <th>Name of the Course</th>
+            <th>Type</th>
+            <th>MOOCs/Institute</th>
+            <th>Remarks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><input type="text" name="code1"></td>
+            <td><input type="text" name="course1"></td>
+            <td><input type="text" name="type1"></td>
+            <td><input type="text" name="mode1"></td>
+            <td><input type="text" name="remarks1"></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><input type="text" name="code2"></td>
+            <td><input type="text" name="course2"></td>
+            <td><input type="text" name="type2"></td>
+            <td><input type="text" name="mode2"></td>
+            <td><input type="text" name="remarks2"></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><input type="text" name="code3"></td>
+            <td><input type="text" name="course3"></td>
+            <td><input type="text" name="type3"></td>
+            <td><input type="text" name="mode3"></td>
+            <td><input type="text" name="remarks3"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="signature-section">
+        <label class="signature-label">Name and Signature of the Mentor:</label>
+        <p></p>
+
+        <label class="signature-label">Signature of the HOD:</label>
+        <p></p>
+
+        <label class="signature-label">Director – AEC & COE:</label>
+        <p></p>
+
+        <label class="signature-label">Principal:</label>
+        <p></p>
+      </div>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</body>
+</html>
