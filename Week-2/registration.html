@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Basic Registration Form</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(120deg, #43cea2 0%, #185a9d 100%);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .reg-container {
+      background: #fff;
+      padding: 28px 32px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(24,90,157,0.10);
+      width: 350px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 18px;
+      color: #185a9d;
+      font-weight: 600;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+      width: 48%;
+      padding: 10px;
+      font-size: 14px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      color: white;
+    }
+
+    input[type="submit"] {
+      background-color: #007bff;
+    }
+
+    input[type="reset"] {
+      background-color: #6c757d;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    input[type="reset"]:hover {
+      background-color: #5a6268;
+    }
+
+    @media (max-width: 500px) {
+      .reg-container {
+        width: 90%;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="reg-container">
+    <h2>Register</h2>
+    <form onsubmit="return checkPasswords()">
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="fullname" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" minlength="6" maxlength="12" required>
+
+      <label for="confirm">Confirm Password</label>
+      <input type="password" id="confirm" name="confirm" minlength="6" maxlength="12" required>
+
+      <div class="btn-group">
+        <input type="reset" value="Reset">
+        <input type="submit" value="Register">
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function checkPasswords() {
+      const pwd = document.getElementById('password').value;
+      const confirm = document.getElementById('confirm').value;
+      const email = document.getElementById('email').value.trim();
+      const username = document.getElementById('username').value.trim();
+      const fullname = document.getElementById('fullname').value.trim();
+      // Basic email regex
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!fullname || !email || !username || !pwd || !confirm) {
+        alert('Please fill in all fields.');
+        return false;
+      }
+      if (!emailPattern.test(email)) {
+        alert('Please enter a valid email address.');
+        return false;
+      }
+      if (pwd.length < 6 || pwd.length > 12) {
+        alert('Password must be 6-12 characters long.');
+        return false;
+      }
+      if (pwd !== confirm) {
+        alert('Passwords do not match!');
+        return false;
+      }
+      alert('Registration successful!');
+      return true;
+    }
+  </script>
+</body>
+</html>
